@@ -61,21 +61,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
 <section class="buttons">
 
-  <!-- Bottone 1: Cliccami -->
-  <button onclick="dataLayer.push({
-      event: 'button_click',
-      button_name: 'cliccami'
-    }); welcomeMessage();">
-    Cliccami ✨
-  </button>
+<!-- Bottone 1: Cliccami -->
+<button 
+  onmouseenter="dataLayer.push({ event: 'hover_button', button_name: 'cliccami' });"
+  onclick="dataLayer.push({ event: 'button_click', button_name: 'cliccami' }); welcomeMessage();">
+  Cliccami ✨
+</button>
 
-  <!-- Bottone 2: Vai su Google -->
-  <button onclick="dataLayer.push({
-      event: 'button_click',
-      button_name: 'cliccami 2'
-    }); welcomeMessage();">
-    Cliccami 2 ✨
-  </button>
+<!-- Bottone 2: Vai su Google -->
+<button 
+  onmouseenter="dataLayer.push({ event: 'hover_button', button_name: 'cliccami 2' });"
+  onclick="dataLayer.push({ event: 'button_click', button_name: 'cliccami 2' }); welcomeMessage();">
+  Cliccami 2 ✨
+</button>
 
 </section>
 
