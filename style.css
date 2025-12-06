@@ -44,23 +44,33 @@ button:hover {
   background: #155dc1;
 }
 
-/* Footer inline con icona LinkedIn */
+/* FOOTER — versione centrata + icona LinkedIn piccola */
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .footer-inline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 6px; /* spazio tra testo e icona */
 }
 
+/* icona LinkedIn piccola e proporzionata */
 .footer-inline img.linkedin-small {
   width: 18px !important;
   height: 18px !important;
   object-fit: contain;
   opacity: 0.8;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s ease;
 }
 
 .footer-inline img.linkedin-small:hover {
   opacity: 1;
 }
+
 
