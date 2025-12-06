@@ -54,11 +54,10 @@ header {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
   margin: 40px 0;
 }
 
-button {
+.buttons button {
   background: #1a73e8;
   color: white;
   padding: 12px 24px;
@@ -66,11 +65,13 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  transition: background 0.2s ease;
 }
 
-button:hover {
+.buttons button:hover {
   background: #155dc1;
 }
+
 
 footer {
   margin-top: 40px;
