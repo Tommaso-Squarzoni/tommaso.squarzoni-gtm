@@ -45,20 +45,22 @@ button:hover {
 }
 
 /* Footer inline con icona LinkedIn */
+
 .footer-inline {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* Spazio tra testo e icona */
+  gap: 6px;
 }
 
 .footer-inline img.linkedin-small {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
 .footer-inline img.linkedin-small:hover {
   opacity: 1;
 }
+
