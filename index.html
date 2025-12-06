@@ -36,11 +36,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <img src="img/esempio.jpg" alt="Immagine demo">
   </section>
 
-  <section class="buttons">
-    <button onclick="welcomeMessage()">Cliccami ✨</button>
-    <button onclick="location.href='https://google.com'">Vai su Google</button>
-  </section>
 
+<section class="buttons">
+
+  <!-- Bottone 1: Cliccami -->
+  <button onclick="dataLayer.push({
+      event: 'button_click',
+      button_name: 'cliccami'
+    }); welcomeMessage();">
+    Cliccami ✨
+  </button>
+
+  <!-- Bottone 2: Vai su Google -->
+  <button onclick="dataLayer.push({
+      event: 'button_click',
+      button_name: 'vai_google'
+    }); location.href='https://google.com';">
+    Vai su Google
+  </button>
+
+</section>
+
+
+
+  
   <footer>
     <p>© 2025 - Il mio sito base</p>
   </footer>
