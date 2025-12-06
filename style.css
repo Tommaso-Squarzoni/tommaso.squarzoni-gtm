@@ -44,32 +44,21 @@ button:hover {
   background: #155dc1;
 }
 
-footer {
-  margin-top: 40px;
-  text-align: center;
-  padding: 15px;
-  background: #fff;
+/* Footer inline con icona LinkedIn */
+.footer-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Spazio tra testo e icona */
 }
 
-
-
-.social-links {
-  margin-top: 10px;
+.footer-inline img.linkedin-small {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
 }
 
-.social-links a {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.social-icon {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(0); /* Nero -> cambia se vuoi */
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.15);
-  opacity: 0.8;
+.footer-inline img.linkedin-small:hover {
+  opacity: 1;
 }
