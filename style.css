@@ -50,3 +50,26 @@ footer {
   padding: 15px;
   background: #fff;
 }
+
+
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(0); /* Nero -> cambia se vuoi */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
