@@ -293,3 +293,48 @@ header p {
     height: 120px;
   }
 }
+
+
+
+
+.back-home-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 2rem 1rem;
+}
+
+.back-home-button {
+  display: inline-block;
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+  background-color: #125ecf;
+}
+
+.back-home-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.back-home-button {
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+  background-color: #125ecf;
+}
