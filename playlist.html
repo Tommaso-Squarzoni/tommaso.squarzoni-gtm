@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Mie Playlist Musicali</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N4X8TM74');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4X8TM74"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <h1>Le Mie Playlist Musicali 🎵</h1>
+    <p>Esplora e ascolta. Ogni card apre un mondo di musica.</p>
+  </header>
+
+  <main class="playlist-grid">
+    <!-- Card generiche con immagini segnaposto -->
+    <!-- Puoi sostituire image1.jpg, etc. con le tue immagini -->
+    <!-- I tracciamenti hover/click sono automatici -->
+    <div class="playlist-card" data-name="Playlist 1">
+      <img src="img/image1.jpg" alt="Playlist 1" />
+      <h3>Playlist 1</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 2">
+      <img src="img/image2.jpg" alt="Playlist 2" />
+      <h3>Playlist 2</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 3">
+      <img src="img/image3.jpg" alt="Playlist 3" />
+      <h3>Playlist 3</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 4">
+      <img src="img/image4.jpg" alt="Playlist 4" />
+      <h3>Playlist 4</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 5">
+      <img src="img/image5.jpg" alt="Playlist 5" />
+      <h3>Playlist 5</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 6">
+      <img src="img/image6.jpg" alt="Playlist 6" />
+      <h3>Playlist 6</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 7">
+      <img src="img/image7.jpg" alt="Playlist 7" />
+      <h3>Playlist 7</h3>
+      <p>Descrizione breve</p>
+    </div>
+    <div class="playlist-card" data-name="Playlist 8">
+      <img src="img/image8.jpg" alt="Playlist 8" />
+      <h3>Playlist 8</h3>
+      <p>Descrizione breve</p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.playlist-card').forEach(card => {
+      const name = card.dataset.name;
+
+      card.addEventListener('mouseenter', () => {
+        dataLayer.push({
+          event: 'hover_card',
+          card_name: name
+        });
+      });
+
+      card.addEventListener('click', () => {
+        dataLayer.push({
+          event: 'click_card',
+          card_name: name
+        });
+      });
+    });
+  </script>
+</body>
+</html>
