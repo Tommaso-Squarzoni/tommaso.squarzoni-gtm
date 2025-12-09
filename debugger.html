@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GA4 Event Debugger | TS.Lab</title>
+  <link rel="stylesheet" href="debugger.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N4X8TM74');</script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body data-page="debugger">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4X8TM74"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">🔧</span>
+      <span class="logo-text">TS<span class="logo-dot">.</span>Lab</span>
+    </a>
+    <div class="nav-center">
+      <span class="nav-badge">Demo Mode</span>
+      <span class="nav-title">GA4 Event Debugger</span>
+    </div>
+    <div class="nav-links">
+      <a href="playlist.html" class="nav-link" data-nav="playlist">
+        <span class="nav-icon">🎵</span>
+      </a>
+      <a href="utm-builder.html" class="nav-link" data-nav="utm">
+        <span class="nav-icon">🔗</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="debugger-container">
+    
+    <!-- Demo Website Panel -->
+    <div class="demo-panel">
+      <div class="demo-browser">
+        <div class="browser-header">
+          <div class="browser-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="browser-url">
+            <span class="url-icon">🔒</span>
+            <span class="url-text">https://demo-ecommerce.shop</span>
+          </div>
+          <div class="browser-actions">
+            <button class="browser-btn" id="refreshDemo" title="Refresh">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                <path d="M21 3v5h-5"/>
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                <path d="M3 21v-5h5"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Demo Website Content -->
+        <div class="demo-website" id="demoWebsite">
+          
+          <!-- Demo Header -->
+          <header class="demo-header">
+            <div class="demo-logo">🛍️ DemoShop</div>
+            <nav class="demo-nav">
+              <a href="#" class="demo-nav-link active" data-page="home">Home</a>
+              <a href="#" class="demo-nav-link" data-page="products">Prodotti</a>
+              <a href="#" class="demo-nav-link" data-page="about">Chi Siamo</a>
+              <a href="#" class="demo-nav-link" data-page="contact">Contatti</a>
+            </nav>
+            <div class="demo-cart" id="demoCart">
+              <span class="cart-icon">🛒</span>
+              <span class="cart-count" id="cartCount">0</span>
+            </div>
+          </header>
+
+          <!-- Demo Pages -->
+          <main class="demo-main">
+            
+            <!-- Home Page -->
+            <section class="demo-page active" data-page="home">
+              <div class="demo-hero">
+                <h1>Benvenuto su DemoShop</h1>
+                <p>Il miglior e-commerce per testare il tracking GA4</p>
+                <button class="demo-cta" data-action="hero_cta">
+                  Scopri i Prodotti
+                </button>
+              </div>
+              
+              <div class="demo-promo" data-action="promo_banner">
+                <span class="promo-badge">🔥 PROMO</span>
+                <span class="promo-text">Sconto 20% su tutto! Usa il codice: DEMO20</span>
+              </div>
+              
+              <div class="demo-section">
+                <h2>Prodotti in Evidenza</h2>
+                <div class="demo-products-grid">
+                  <div class="demo-product-card" data-product-id="SKU001" data-product-name="Sneakers Pro" data-product-price="129.99" data-product-category="Scarpe">
+                    <div class="product-image">👟</div>
+                    <h3 class="product-name">Sneakers Pro</h3>
+                    <p class="product-price">€129.99</p>
+                    <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                  </div>
+                  <div class="demo-product-card" data-product-id="SKU002" data-product-name="T-Shirt Basic" data-product-price="29.99" data-product-category="Abbigliamento">
+                    <div class="product-image">👕</div>
+                    <h3 class="product-name">T-Shirt Basic</h3>
+                    <p class="product-price">€29.99</p>
+                    <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                  </div>
+                  <div class="demo-product-card" data-product-id="SKU003" data-product-name="Zaino Urban" data-product-price="79.99" data-product-category="Accessori">
+                    <div class="product-image">🎒</div>
+                    <h3 class="product-name">Zaino Urban</h3>
+                    <p class="product-price">€79.99</p>
+                    <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="demo-newsletter">
+                <h3>Iscriviti alla Newsletter</h3>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="La tua email..." class="newsletter-input" id="newsletterEmail">
+                  <button class="newsletter-btn" data-action="newsletter_signup">Iscriviti</button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Products Page -->
+            <section class="demo-page" data-page="products">
+              <h1>Tutti i Prodotti</h1>
+              <div class="demo-filters">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="scarpe">Scarpe</button>
+                <button class="filter-btn" data-filter="abbigliamento">Abbigliamento</button>
+                <button class="filter-btn" data-filter="accessori">Accessori</button>
+              </div>
+              <div class="demo-products-grid large">
+                <div class="demo-product-card" data-product-id="SKU001" data-product-name="Sneakers Pro" data-product-price="129.99" data-product-category="Scarpe">
+                  <div class="product-image">👟</div>
+                  <h3 class="product-name">Sneakers Pro</h3>
+                  <p class="product-price">€129.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+                <div class="demo-product-card" data-product-id="SKU002" data-product-name="T-Shirt Basic" data-product-price="29.99" data-product-category="Abbigliamento">
+                  <div class="product-image">👕</div>
+                  <h3 class="product-name">T-Shirt Basic</h3>
+                  <p class="product-price">€29.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+                <div class="demo-product-card" data-product-id="SKU003" data-product-name="Zaino Urban" data-product-price="79.99" data-product-category="Accessori">
+                  <div class="product-image">🎒</div>
+                  <h3 class="product-name">Zaino Urban</h3>
+                  <p class="product-price">€79.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+                <div class="demo-product-card" data-product-id="SKU004" data-product-name="Running Shoes" data-product-price="149.99" data-product-category="Scarpe">
+                  <div class="product-image">👟</div>
+                  <h3 class="product-name">Running Shoes</h3>
+                  <p class="product-price">€149.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+                <div class="demo-product-card" data-product-id="SKU005" data-product-name="Felpa Hoodie" data-product-price="59.99" data-product-category="Abbigliamento">
+                  <div class="product-image">🧥</div>
+                  <h3 class="product-name">Felpa Hoodie</h3>
+                  <p class="product-price">€59.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+                <div class="demo-product-card" data-product-id="SKU006" data-product-name="Cappello Logo" data-product-price="24.99" data-product-category="Accessori">
+                  <div class="product-image">🧢</div>
+                  <h3 class="product-name">Cappello Logo</h3>
+                  <p class="product-price">€24.99</p>
+                  <button class="product-add-cart" data-action="add_to_cart">Aggiungi al Carrello</button>
+                </div>
+              </div>
+            </section>
+
+            <!-- About Page -->
+            <section class="demo-page" data-page="about">
+              <h1>Chi Siamo</h1>
+              <div class="about-content">
+                <p>DemoShop è un e-commerce dimostrativo creato per testare implementazioni GA4 e GTM.</p>
+                <p>Ogni interazione su questa pagina genera eventi nel dataLayer che puoi vedere nella sidebar.</p>
+                <div class="about-cta">
+                  <button class="demo-cta" data-action="about_cta">Scopri i nostri valori</button>
+                </div>
+              </div>
+              <div class="demo-video" data-action="video_play">
+                <div class="video-placeholder">
+                  <span class="play-icon">▶️</span>
+                  <span>Guarda il video aziendale</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Contact Page -->
+            <section class="demo-page" data-page="contact">
+              <h1>Contattaci</h1>
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label>Nome</label>
+                  <input type="text" placeholder="Il tuo nome" data-field="name">
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" placeholder="La tua email" data-field="email">
+                </div>
+                <div class="form-group">
+                  <label>Messaggio</label>
+                  <textarea placeholder="Il tuo messaggio..." data-field="message"></textarea>
+                </div>
+                <button type="submit" class="demo-cta" data-action="form_submit">Invia Messaggio</button>
+              </form>
+            </section>
+
+          </main>
+
+          <!-- Demo Footer -->
+          <footer class="demo-footer">
+            <div class="footer-links">
+              <a href="#" data-action="footer_link" data-link="privacy">Privacy Policy</a>
+              <a href="#" data-action="footer_link" data-link="terms">Termini</a>
+              <a href="#" data-action="footer_link" data-link="faq">FAQ</a>
+            </div>
+            <div class="footer-social">
+              <button class="social-btn" data-action="social_click" data-social="facebook">📘</button>
+              <button class="social-btn" data-action="social_click" data-social="instagram">📸</button>
+              <button class="social-btn" data-action="social_click" data-social="twitter">🐦</button>
+            </div>
+          </footer>
+
+        </div>
+      </div>
+      
+      <!-- Instructions -->
+      <div class="demo-instructions">
+        <span class="instruction-icon">💡</span>
+        <span>Interagisci con il sito demo per vedere gli eventi GA4 in tempo reale</span>
+      </div>
+    </div>
+
+    <!-- Debugger Sidebar -->
+    <aside class="debugger-sidebar">
+      
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20h9"/>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+          Event Stream
+        </div>
+        <div class="sidebar-actions">
+          <button class="sidebar-btn" id="clearEvents" title="Clear all">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18"/>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+            </svg>
+          </button>
+          <button class="sidebar-btn" id="exportEvents" title="Export JSON">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="sidebar-stats">
+        <div class="stat-item">
+          <span class="stat-value" id="totalEvents">0</span>
+          <span class="stat-label">Eventi</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="pageViews">0</span>
+          <span class="stat-label">Page Views</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="ecomEvents">0</span>
+          <span class="stat-label">E-commerce</span>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="sidebar-filters">
+        <button class="filter-tab active" data-filter="all">Tutti</button>
+        <button class="filter-tab" data-filter="page">Page</button>
+        <button class="filter-tab" data-filter="ecommerce">E-com</button>
+        <button class="filter-tab" data-filter="engagement">Engage</button>
+      </div>
+
+      <!-- Events List -->
+      <div class="events-list" id="eventsList">
+        <div class="events-empty">
+          <div class="empty-icon">📡</div>
+          <p>In attesa di eventi...</p>
+          <span>Interagisci con il sito demo</span>
+        </div>
+      </div>
+
+      <!-- Event Detail Panel -->
+      <div class="event-detail" id="eventDetail">
+        <div class="detail-header">
+          <span class="detail-title">Dettaglio Evento</span>
+          <button class="detail-close" id="closeDetail">×</button>
+        </div>
+        <div class="detail-content" id="detailContent"></div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer compact">
+    <div class="footer-content">
+      <p class="footer-text">GA4 Event Debugger — Demo Mode</p>
+      <a href="https://www.linkedin.com/in/tommaso-squarzoni" target="_blank" rel="noopener noreferrer" class="footer-link">
+        Tommaso Squarzoni
+      </a>
+    </div>
+  </footer>
+
+  <script src="debugger.js"></script>
+</body>
+</html>
