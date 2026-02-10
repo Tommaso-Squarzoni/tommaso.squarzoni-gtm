@@ -16,6 +16,97 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N4X8TM74');</script>
   <!-- End Google Tag Manager -->
+
+  <style>
+    /* ==========================================
+       INDEX PAGE OPTIMIZATIONS
+       ========================================== */
+    
+    /* Navbar compatta */
+    .nav-links {
+      gap: 0.25rem;
+    }
+    
+    .nav-link {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      gap: 0.4rem;
+    }
+    
+    .nav-icon {
+      font-size: 0.9rem;
+    }
+
+    /* Tools Grid - 4 colonne su desktop */
+    .tools-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    /* Card compatte */
+    .tools-grid-4 .tool-card {
+      padding: 1.5rem;
+    }
+
+    .tools-grid-4 .tool-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .tools-grid-4 .tool-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .tools-grid-4 .tool-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tools-grid-4 .tool-description {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .tools-grid-4 .tool-cta {
+      font-size: 0.8rem;
+    }
+
+    /* Responsive - 4 cols */
+    @media (max-width: 1200px) {
+      .tools-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tools-grid-4 {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Mobile navbar scroll */
+      .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-right: 1rem;
+      }
+      
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .nav-link {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    }
+  </style>
 </head>
 
 <body data-page="home">
@@ -45,7 +136,7 @@
       </a>
       <a href="utm-builder.html" class="nav-link" data-nav="utm">
         <span class="nav-icon">🔗</span>
-        UTM Builder
+        UTM
       </a>
       <a href="debugger.html" class="nav-link" data-nav="debugger">
         <span class="nav-icon">🔍</span>
@@ -150,13 +241,13 @@
 
   <!-- Tools Section -->
   <section class="content-section dark-section" data-section="tools">
-    <div class="section-container">
+    <div class="section-container wide">
       <div class="section-header center">
         <span class="section-tag">Strumenti</span>
         <h2 class="section-title">Esplora il Lab</h2>
         <p class="section-subtitle">Strumenti e risorse per il digital marketing analytics</p>
       </div>
-      <div class="tools-grid">
+      <div class="tools-grid-4">
         <a href="utm-builder.html" class="tool-card" data-tool="utm-builder" data-animate>
           <div class="tool-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -166,8 +257,7 @@
           </div>
           <h3 class="tool-title">UTM Builder</h3>
           <p class="tool-description">
-            Crea URL tracciabili con un'esperienza guidata. 
-            Best practices per source e medium integrate.
+            Crea URL tracciabili con best practices per source e medium.
           </p>
           <span class="tool-cta">
             Inizia ora
@@ -186,10 +276,9 @@
               <circle cx="18" cy="16" r="3"/>
             </svg>
           </div>
-          <h3 class="tool-title">Playlist Musicali</h3>
+          <h3 class="tool-title">Playlist</h3>
           <p class="tool-description">
-            Rilassati con selezioni musicali curate. 
-            EDM, Techno e Deep House per concentrarsi.
+            Selezioni curate di EDM, Techno e Deep House.
           </p>
           <span class="tool-cta">
             Ascolta
@@ -212,8 +301,7 @@
           </div>
           <h3 class="tool-title">GA4 Debugger</h3>
           <p class="tool-description">
-            Visualizza gli eventi GA4 in tempo reale. 
-            Demo interattiva con e-commerce simulato.
+            Visualizza eventi GA4 in tempo reale con demo e-commerce.
           </p>
           <span class="tool-cta">
             Prova ora
@@ -233,10 +321,9 @@
               <rect x="3" y="13" width="7" height="8" rx="1"/>
             </svg>
           </div>
-          <h3 class="tool-title">Analytics Dashboard</h3>
+          <h3 class="tool-title">Dashboard</h3>
           <p class="tool-description">
-            Monitora le performance del sito in tempo reale. 
-            Canali di acquisizione e player analytics.
+            Analytics real-time: acquisizione e player analytics.
           </p>
           <span class="tool-cta">
             Visualizza
@@ -319,7 +406,6 @@
       const dashboardCard = document.querySelector('[data-tool="dashboard"]');
       
       if (dashboardCard) {
-        // Track hover (mouseenter)
         dashboardCard.addEventListener('mouseenter', function() {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -329,7 +415,6 @@
           });
         });
 
-        // Track click
         dashboardCard.addEventListener('click', function() {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
