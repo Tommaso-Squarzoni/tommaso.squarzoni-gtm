@@ -18,10 +18,36 @@
   <!-- End Google Tag Manager -->
 
   <style>
-    /* ==========================================
-       DASHBOARD PAGE - FULLSCREEN NATIVE
-       ========================================== */
-    
+    /* Navbar compatta */
+    .nav-links {
+      gap: 0.25rem;
+    }
+    .nav-link {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      gap: 0.4rem;
+    }
+    .nav-icon {
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-right: 1rem;
+      }
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-link {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    }
+
+    /* Dashboard fullscreen */
     body[data-page="dashboard"] {
       overflow: hidden;
     }
@@ -80,12 +106,6 @@
       font-family: var(--font-mono);
       letter-spacing: 0.05em;
     }
-
-    /* Nav active state adjustment */
-    .nav-link[data-nav="dashboard"].active {
-      color: var(--text-primary);
-      background: rgba(99, 102, 241, 0.15);
-    }
   </style>
 </head>
 
@@ -108,7 +128,7 @@
       </a>
       <a href="utm-builder.html" class="nav-link" data-nav="utm">
         <span class="nav-icon">🔗</span>
-        UTM Builder
+        UTM
       </a>
       <a href="debugger.html" class="nav-link" data-nav="debugger">
         <span class="nav-icon">🔍</span>
