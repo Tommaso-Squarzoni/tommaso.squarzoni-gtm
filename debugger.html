@@ -18,29 +18,56 @@
   <!-- End Google Tag Manager -->
 
   <style>
-    /* Navbar compatta per debugger */
+    /* Override debugger.css navbar - IDENTICO alle altre pagine */
     .nav-links {
-      gap: 0.25rem;
+      display: flex;
+      gap: 0.25rem !important;
     }
+    
     .nav-link {
-      padding: 0.4rem 0.6rem;
-      font-size: 0.85rem;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      width: auto !important;
+      height: auto !important;
+      gap: 0.4rem !important;
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.8rem !important;
+      color: var(--text-secondary) !important;
+      text-decoration: none !important;
+      border-radius: 8px !important;
+      transition: all 0.15s ease !important;
     }
+    
+    .nav-link:hover {
+      color: var(--text-primary) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+    
+    .nav-link.active {
+      color: var(--text-primary) !important;
+      background: rgba(99, 102, 241, 0.15) !important;
+    }
+    
     .nav-icon {
-      font-size: 0.9rem;
+      font-size: 0.9rem !important;
     }
+
+    /* Mobile scroll */
     @media (max-width: 768px) {
       .nav-links {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        padding-right: 1rem !important;
       }
       .nav-links::-webkit-scrollbar {
-        display: none;
+        display: none !important;
       }
       .nav-link {
-        flex-shrink: 0;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
       }
     }
   </style>
@@ -65,12 +92,19 @@
     <div class="nav-links">
       <a href="playlist.html" class="nav-link" data-nav="playlist">
         <span class="nav-icon">🎵</span>
+        Playlist
       </a>
       <a href="utm-builder.html" class="nav-link" data-nav="utm">
         <span class="nav-icon">🔗</span>
+        UTM
+      </a>
+      <a href="debugger.html" class="nav-link active" data-nav="debugger">
+        <span class="nav-icon">🔍</span>
+        Debugger
       </a>
       <a href="dashboard.html" class="nav-link" data-nav="dashboard">
         <span class="nav-icon">📊</span>
+        Dashboard
       </a>
     </div>
   </nav>
