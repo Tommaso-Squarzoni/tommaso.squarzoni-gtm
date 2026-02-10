@@ -51,6 +51,10 @@
         <span class="nav-icon">🔍</span>
         Debugger
       </a>
+      <a href="dashboard.html" class="nav-link" data-nav="dashboard">
+        <span class="nav-icon">📊</span>
+        Dashboard
+      </a>
     </div>
   </nav>
 
@@ -111,7 +115,7 @@
     <div class="section-container">
       <div class="section-header">
         <span class="section-tag">Chi sono</span>
-        <h2 class="section-title">Digital Marketing Analyst & Strategist</h2>
+        <h2 class="section-title">Digital Implementation Expert</h2>
       </div>
       <div class="about-grid">
         <div class="about-card" data-animate>
@@ -122,7 +126,7 @@
         <div class="about-content" data-animate>
           <p class="about-text">
             Specializzato in <strong>Google Analytics 4</strong>, <strong>Google Tag Manager</strong> 
-            e implementazioni di web analytics. Gestisco sistemi di tracciamento 
+            e implementazioni di web analytics. Gestisco sistemi di tracciamento per brand automotive 
             e sviluppo strumenti di audit GA4 per analizzare implementazioni e performance.
           </p>
           <div class="skill-tags">
@@ -196,7 +200,6 @@
           <div class="tool-glow"></div>
         </a>
 
-        
         <a href="debugger.html" class="tool-card" data-tool="debugger" data-animate>
           <div class="tool-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -214,6 +217,29 @@
           </p>
           <span class="tool-cta">
             Prova ora
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+          <div class="tool-glow"></div>
+        </a>
+
+        <a href="dashboard.html" class="tool-card" data-tool="dashboard" data-animate>
+          <div class="tool-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="4" rx="1"/>
+              <rect x="14" y="10" width="7" height="11" rx="1"/>
+              <rect x="3" y="13" width="7" height="8" rx="1"/>
+            </svg>
+          </div>
+          <h3 class="tool-title">Analytics Dashboard</h3>
+          <p class="tool-description">
+            Monitora le performance del sito in tempo reale. 
+            Canali di acquisizione e player analytics.
+          </p>
+          <span class="tool-cta">
+            Visualizza
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -287,5 +313,34 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Dashboard Tool Card - Hover & Click Tracking
+    (function() {
+      const dashboardCard = document.querySelector('[data-tool="dashboard"]');
+      
+      if (dashboardCard) {
+        // Track hover (mouseenter)
+        dashboardCard.addEventListener('mouseenter', function() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'tool_card_hover',
+            'tool_name': 'dashboard',
+            'tool_title': 'Analytics Dashboard'
+          });
+        });
+
+        // Track click
+        dashboardCard.addEventListener('click', function() {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'tool_card_click',
+            'tool_name': 'dashboard',
+            'tool_title': 'Analytics Dashboard',
+            'link_url': this.href
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
